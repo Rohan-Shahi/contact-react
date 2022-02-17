@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ContactForm from "../../contact/Body/ContactForm";
+import Form from "../../contact/Body/Form";
 
 export default function ListItem(props) {
   const { personName, personEmail, personPhone, handleDelete,contact,setContact,person} = props;
@@ -36,7 +37,7 @@ export default function ListItem(props) {
         </div>
       </div>
       {isEditing? 
-      <ContactForm contact={contact} setContact={setContact} editData={person} setIsEditing={setIsEditing}/>
+      <Form contact={contact} setContact={setContact} editData={person} setIsEditing={setIsEditing}/>
       : 
       
       toggle ? 
