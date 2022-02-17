@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 export default function Form(props) {
-    const { contact, setContact, editData,setIsEditing } = props;
+  const { contact, setContact, editData, setIsEditing } = props;
   const initialValues = {
     name: "",
     email: "",
@@ -68,68 +68,66 @@ export default function Form(props) {
     onSubmit,
     validationSchema,
   });
-  // console.log(values)
-  // console.log(errors)
 
-  return(
+  return (
     <form onSubmit={handleSubmit}>
-    <div className="mb-3">
-      <label htmlFor="name" className="form-label">
-        Name
-      </label>
-      <input
-        type="text"
-        value={values.name}
-        className="form-control"
-        name="name"
-        placeholder="Name"
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-    </div>
-    {errors.name && touched.name ? (
-      <div style={{ color: "red" }}>{errors.name}</div>
-    ) : null}
+      <div className="mb-3">
+        <label htmlFor="name" className="form-label">
+          Name
+        </label>
+        <input
+          type="text"
+          value={values.name}
+          className="form-control"
+          name="name"
+          placeholder="Name"
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+      </div>
+      {errors.name && touched.name ? (
+        <div style={{ color: "red" }}>{errors.name}</div>
+      ) : null}
 
-    <div className="mb-3">
-      <label htmlFor="Email" className="form-label">
-        Email
-      </label>
-      <input
-        type="email"
-        value={values.email}
-        className="form-control"
-        name="email"
-        placeholder="Email"
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-    </div>
-    {errors.email && touched.email ? (
-      <div style={{ color: "red" }}>{errors.email}</div>
-    ) : null}
+      <div className="mb-3">
+        <label htmlFor="Email" className="form-label">
+          Email
+        </label>
+        <input
+          type="email"
+          value={values.email}
+          className="form-control"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+      </div>
+      {errors.email && touched.email ? (
+        <div style={{ color: "red" }}>{errors.email}</div>
+      ) : null}
 
-    <div className="mb-3">
-      <label htmlFor="phone" className="form-label">
-        Phone
-      </label>
-      <input
-        type="text"
-        value={values.phone}
-        className="form-control"
-        name="phone"
-        placeholder="Phone"
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-    </div>
-    {errors.phone && touched.phone ? (
-      <div style={{ color: "red" }}>{errors.phone}</div>
-    ) : null}
+      <div className="mb-3">
+        <label htmlFor="phone" className="form-label">
+          Phone
+        </label>
+        <input
+          type="text"
+          value={values.phone}
+          className="form-control"
+          name="phone"
+          placeholder="Phone"
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+      </div>
+      {errors.phone && touched.phone ? (
+        <div style={{ color: "red" }}>{errors.phone}</div>
+      ) : null}
 
-   <button type="submit" className="btn btn-primary">
-      {editData ? "Update" : "Submit"}
-  </button>
-  </form>
-  )
+      <button type="submit" className="btn btn-primary">
+        {editData ? "Update" : "Submit"}
+      </button>
+    </form>
+  );
 }
